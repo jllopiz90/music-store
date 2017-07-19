@@ -36,16 +36,20 @@
                                             <h3><a href="{{route('artistDetail',$artist->id)}}" class="artistLink">{{$artist->name}}</a></h3>
                                         </div>
                                         <div class="service-list-col3">
-                                            <h3><a href="javascript:void(0);" class="btn btn-danger deleteArtist" data-arid="{{$artist->id}}" >Delete</a></h3>
+                                            @if(Auth::user()->authorizeRoles(['admin']))
+                                                <h3><a href="javascript:void(0);" class="btn btn-danger deleteArtist" data-arid="{{$artist->id}}" >Delete</a></h3>
+                                            @endif
                                         </div>
                                     </div>
                                 @endforeach
                             </div>
-                            <ul class="Portfolio-nav wow fadeIn delay-02s fl-lt">
-                                <li class="homeList">
-                                    <a href="javascript:void(0);" id="newArtist">Create New Artist</a>
-                                </li>
-                            </ul>
+                            @if(Auth::user()->authorizeRoles(['admin']))
+                                <ul class="Portfolio-nav wow fadeIn delay-02s fl-lt">
+                                    <li class="homeList">
+                                        <a href="javascript:void(0);" id="newArtist">Create New Artist</a>
+                                    </li>
+                                </ul>
+                            @endif
                         </div>
                         <figure class="col-lg-8 col-sm-6  text-right wow fadeInUp delay-02s">
                             <img src="img/music.jpg" alt="">

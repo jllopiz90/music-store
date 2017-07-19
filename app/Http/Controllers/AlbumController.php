@@ -72,8 +72,5 @@ class AlbumController extends Controller
         $artis_id = $album->artist_id;
         $album->delete();
         return json_encode($artis_id);
-
-
-
     }
 }

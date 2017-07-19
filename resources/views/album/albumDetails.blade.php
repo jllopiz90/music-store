@@ -33,7 +33,9 @@
                                 <h2>{{$album->name}}</h2>
                                 <img src="../{{$album->picture}}" alt="" />
                                 <br><br>
-                                <a class="btn btn-danger" href="javascript:void(0);" id="albumDelete" data-alid="{{$album->id}}">DELETE</a>
+                                @if(Auth::user()->authorizeRoles(['admin']))
+                                    <a class="btn btn-danger" href="javascript:void(0);" id="albumDelete" data-alid="{{$album->id}}">DELETE</a>
+                                @endif
                             </li>
                         </ul>
                     </div>
