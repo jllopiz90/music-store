@@ -37,31 +37,38 @@
                                 </ul>
                             </div>
                             <div id="createAlbum">
-                                <div class="col-md-1">
-                                    <label>Name</label>
+                                <div class="col-md-12">
+                                    <div class="col-md-1">
+                                        <label>Name</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text" name="albumName" id="albumName">
+                                    </div>
+                                    <div class="col-md-1">
+                                        <label>Genre</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text" name="albumGenre" id="albumGenre">
+                                    </div>
+                                    <div class="col-md-1">
+                                        <label>Artist</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <select id="artistAlbum">
+                                            <option value="0">Select Artist</option>
+                                            @foreach($artists as $artist)
+                                                <option value="{{$artist->id}}">{{$artist->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                 </div>
-                                <div class="col-md-2">
-                                    <input type="text" name="albumName" id="albumName">
-                                </div>
-                                <div class="col-md-1">
-                                    <label>Genre</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="text" name="albumGenre" id="albumGenre">
-                                </div>
-                                <div class="col-md-1">
-                                    <label>Artist</label>
-                                </div>
-                                <div class="col-md-3">
-                                    <select id="artistAlbum">
-                                        <option value="0">Select Artist</option>
-                                        @foreach($artists as $artist)
-                                            <option value="{{$artist->id}}">{{$artist->name}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col-md-2">
-                                    <button id="createAlbumtBtn" class="btn btn-primary">Create</button>
+                                <div class="col-md-12 newAlbumDropzone fl-rt">
+                                    <a id="acceptAlbumNew" href="javascript:void(0);" class="col-md-1"><i class="fa fa-check-square fa-2x" aria-hidden="true"></i></a>
+                                    <a id="canceltAlbumNew" href="javascript:void(0);" class="col-md-2" ><i class="fa fa-ban fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Cancel</a>
+                                    <label class="col-md-3 col-md-offset-1"><i class="fa fa-cloud-upload" aria-hidden="true" style="color: deepskyblue;"></i>&nbsp; Select Imagen </label>
+                                    <form action="/album/uploadCover" class="dropzone col-md-3 col-md-push-1  mydropzone">
+                                        {!! csrf_field() !!}
+                                    </form>
                                 </div>
                             </div>
                         </div>

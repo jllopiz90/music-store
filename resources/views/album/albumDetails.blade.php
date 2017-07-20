@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Dashboard</div>
+                    <div class="panel-heading">ALBUM</div>
 
                     <div class="panel-body">
                         <ul class="Portfolio-nav wow fadeIn delay-02s">
@@ -35,6 +35,7 @@
                                 <br><br>
                                 @if(Auth::user()->authorizeRoles(['admin']))
                                     <a class="btn btn-danger" href="javascript:void(0);" id="albumDelete" data-alid="{{$album->id}}">DELETE</a>
+                                    <a class="btn btn-warning" href="{{route('albumGoEdit',$album->id)}}" id="albumEdit">EDIT</a>
                                 @endif
                             </li>
                         </ul>

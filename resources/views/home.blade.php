@@ -21,7 +21,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading">HOME</div>
 
                 <div class="panel-body">
                     <ul class="Portfolio-nav wow fadeIn delay-02s">
@@ -30,7 +30,7 @@
                             <img src="img/artists.jpg">
                         </li>
                         <li class="homeList">
-                            <a class="" href="{{url('albums')}}">Albums</a>
+                            <a href="{{url('albums')}}">Albums</a>
                             <img src="img/albums.jpg">
                         </li>
                     </ul>

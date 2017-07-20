@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Album;
 use App\Artist;
 
@@ -30,8 +29,8 @@ class HomeController extends Controller
 
     public function welcome()
     {
-        $albums = Album::all();
-        $artists = Artist::all();
+        $albums = Album::orderBy('name','asc')->get();
+        $artists = Artist::orderBy('name','asc')->get();
         $genres=[];
         foreach ($albums as $album){
             if(!in_array($album->genre,$genres))

@@ -11,7 +11,7 @@
 
 .artists-container{padding-top: 100px;}
 
-.homeList a{ width: 100px;}
+.homeList a{ display:inline-block;margin-top: 40px;}
 
 /*.imgDetails{ width: 50%;}*/
 
@@ -39,10 +39,45 @@
 
 #createArtist {visibility: hidden;}
 
-#createAlbum {visibility: hidden; margin-bottom: 40px;}
+#createAlbum {display: none; margin-bottom: 40px;}
 
 #newArtist{width: 200px;}
 
+.artistEdit {margin-left: 20px;}
+
+.artistEdit:hover {transform: scale(1.5,1.5);color: sandybrown;}
+
+.editArtistName {visibility: hidden;}
+
+.deleteArtist {margin-left: 20px;}
+
+.deleteArtist:hover {transform: scale(1.5,1.5);color: red;}
+
+#albumDelete {color: red !important;}
+
+#albumEdit {margin-left: 40px;}
+
+.acceptEdit {margin-left: 20px;}
+
+.acceptEdit:hover {transform: scale(1.5,1.5);color: green;}
+
+.cancelEdit {margin-left: 20px;}
+
+.cancelEdit:hover {transform: scale(1.5,1.5);color: red;}
+
+.editAlbumElement {margin-top: 30px;padding-left: 20px;}
+
+.editAlbumChoice {margin-top: 50px;}
+
+.editAlbumChoice a {margin-left: 30px; margin-right: 30px; }
+
+.mydropzone {border: solid 1px red; max-height: 200px; max-width: 200px;}
+
+.newAlbumDropzone {margin-top: 30px;}
+
+#acceptAlbumNew { color: green;}
+
+#canceltAlbumNew {color: red;text-decoration: none;}
 /* Float Elements 
 ---------------------------------*/
 .fl-lt {float:left;}

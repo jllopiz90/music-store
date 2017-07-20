@@ -33,12 +33,26 @@
                                             <i class="fa-microphone"></i>
                                         </div>
                                         <div class="service-list-col2">
-                                            <h3><a href="{{route('artistDetail',$artist->id)}}" class="artistLink">{{$artist->name}}</a></h3>
-                                        </div>
-                                        <div class="service-list-col3">
-                                            @if(Auth::user()->authorizeRoles(['admin']))
-                                                <h3><a href="javascript:void(0);" class="btn btn-danger deleteArtist" data-arid="{{$artist->id}}" >Delete</a></h3>
-                                            @endif
+                                            <h3>
+                                                <div class="col-md-7">
+                                                    <a href="{{route('artistDetail',$artist->id)}}" id="artistName_{{$artist->id}}" class="artistLink">{{$artist->name}}</a>
+                                                </div>
+                                                @if(Auth::user()->authorizeRoles(['admin']))
+                                                    <div class="col-md-5">
+                                                        <i class="fa fa-pencil artistEdit" data-arid="{{$artist->id}}" aria-hidden="true"></i>
+                                                        <i class="fa fa-trash-o deleteArtist" data-arid="{{$artist->id}}" aria-hidden="true"></i>
+                                                    </div>
+                                                @endif
+                                            </h3>
+                                            <div id="editArtistName_{{$artist->id}}" class="editArtistName">
+                                                <div class="col-md-7">
+                                                    <input type="text" id="newArtistName_{{$artist->id}}" value="{{$artist->name}}">
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <i class="fa fa-check acceptEdit" data-arid="{{$artist->id}}" aria-hidden="true"></i>
+                                                    <i class="fa fa-times cancelEdit" data-arid="{{$artist->id}}" aria-hidden="true"></i>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 @endforeach

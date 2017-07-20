@@ -19,6 +19,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/artists', 'ArtistController@index')->name('artists');
 Route::get('/artist/{id}', 'ArtistController@artist')->name('artistDetail');
 Route::post('/artist/create', 'ArtistController@create')->name('artistCreate');
+Route::post('/artist/edit', 'ArtistController@edit')->name('artistEdit');
 Route::post('/artist/delete', 'ArtistController@delete')->name('artistDelete');
 
 //Album Routes
@@ -26,5 +27,8 @@ Route::get('/albums', 'AlbumController@index')->name('albums');
 Route::get('/album/{id}', 'AlbumController@album')->name('albumDetail');
 Route::post('/album/create', 'AlbumController@create')->name('albumCreate');
 Route::any('/album/delete', 'AlbumController@delete')->name('albumDelete');
+Route::any('/album/edit/{id}', 'AlbumController@goToEdit')->name('albumGoEdit');
+Route::any('/album/editAlbum', 'AlbumController@editAlbum')->name('albumEdit');
+Route::any('/album/uploadCover', 'AlbumController@uploadCover')->name('uploadCover');
 
 

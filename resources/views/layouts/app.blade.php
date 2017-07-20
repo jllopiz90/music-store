@@ -24,6 +24,8 @@
     <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet">
     <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
     <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/basic.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/dropzone.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.min.css"/>
 
 </head>
@@ -83,6 +85,7 @@
 <script src="{{ asset('js/jquery.isotope.js')}}"></script>
 <script src="{{ asset('js/wow.js')}}"></script>
 <script src="{{ asset('js/classie.js')}}"></script>
+<script src="{{ asset('js/dropzone.js')}}"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.min.js"></script>
 <script src="{{ asset('js/tools.js')}}"></script>
 <script src="{{ asset('js/artist.js')}}"></script>

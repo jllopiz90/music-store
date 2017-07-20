@@ -37,7 +37,7 @@ class AlbumTableSeeder extends Seeder
         ));
         Album::create(array(
         'artist_id'=> 3,
-        'name'     => 'Miles Davis',
+        'name'     => 'Kind of Blue',
         'genre' => 'Jazz',
         'picture'=> 'img/kindofblue.jpg',
 

@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 use App\Artist;
 use App\Album;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Validation\Rules\In;
 
 
 class ArtistController extends Controller
@@ -31,7 +32,7 @@ class ArtistController extends Controller
      */
     public function index()
     {
-        $artist = Artist::all();
+        $artist = Artist::orderBy('name','asc')->get();
         return view('artist/artists',['artists'=> $artist]);
     }
 
@@ -50,6 +51,19 @@ class ArtistController extends Controller
         if($newArtist == null)
             return -1;
         return json_encode($newArtist);
+    }
+
+    public function edit(){
+        $id =Input::get('ARID');
+        $name = Input::get('NAME');
+
+        $artist = Artist::where('id',$id)->first();
+        if($artist == null)
+            return -1;
+
+        $artist->name = $name;
+        $artist->save();
+        return json_encode($artist);
     }
 
     public function delete(){
