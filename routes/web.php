@@ -21,6 +21,7 @@ Route::get('/artist/{id}', 'ArtistController@artist')->name('artistDetail');
 Route::post('/artist/create', 'ArtistController@create')->name('artistCreate');
 Route::post('/artist/edit', 'ArtistController@edit')->name('artistEdit');
 Route::post('/artist/delete', 'ArtistController@delete')->name('artistDelete');
+Route::any('/artist/changePag', 'ArtistController@changePage')->name('artistChangePag');
 
 //Album Routes
 Route::get('/albums', 'AlbumController@index')->name('albums');

@@ -26,22 +26,31 @@
                 <div class="container">
                     <h2>Artists</h2>
                     <div class="row">
-                        <div class="col-lg-4 col-sm-6 wow fadeInLeft delay-05s artists-container">
+                        <div class="col-lg-6 col-md-6 col-sm-6 wow fadeInLeft delay-05s artists-container" id="artistContHome" data-totalpages="{{$totalPag}}" data-page="{{$page}}">
+                            <div id="artistContainer">
                             @foreach($artists as $artist)
-                            <div class="service-list">
-                                <div class="service-list-col1">
-                                    <i class="fa-music"></i>
+                                <div class="service-list">
+                                    <div class="service-list-col1">
+                                        <i class="fa-music"></i>
+                                    </div>
+                                    <div class="service-list-col2">
+                                        <h3><a href="{{route('artistDetail',$artist->id)}}" class="artistLink" data-aid="{{$artist->id}}">{{$artist->name}}</a></h3>
+                                    </div>
                                 </div>
-                                <div class="service-list-col2">
-                                    <h3><a href="{{route('artistDetail',$artist->id)}}" class="artistLink" data-aid="{{$artist->id}}">{{$artist->name}}</a></h3>
-                                </div>
-                            </div>
                             @endforeach
+                            </div>
+                            @if($totalPag>1)
+                                <div class="col-lg-12 col-md-12 col-sm-12 artistNav">
+                                    <a href="javascript:void(0);" id="prevArtistHome" class="fl-lt"> <i class="fa fa-chevron-left" aria-hidden="true"></i>PREV</a>
+                                    <span class="col-lg-offset-3 col-md-offset-3"><i class="fa fa-file-o" aria-hidden="true"></i> <span id="currentArtistHomePage">{{$page+1}}</span>/<span id="totalArtistHomePAg">{{$totalPag}}</span></span>
+                                    <a href="javascript:void(0);" id="nextArtistHome" class="col-lg-offset-4 col-md-offset-4"> <i class="fa fa-chevron-right" aria-hidden="true"></i>NEXT</a>
+                                </div>
+                            @endif
                         </div>
-                        <figure class="col-lg-8 col-sm-6  text-right wow fadeInUp delay-02s">
+                        <figure class="col-lg-6 col-md-6 col-sm-6  text-right wow fadeInUp delay-02s">
                             <img src="img/music.jpg" alt="">
                         </figure>
-                </div>
+                    </div>
                 </div>
             </section><!--main-section-end-->
 

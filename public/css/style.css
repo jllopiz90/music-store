@@ -78,6 +78,8 @@
 #acceptAlbumNew { color: green;}
 
 #canceltAlbumNew {color: red;text-decoration: none;}
+
+.artistNav {margin-top: 30px;}
 /* Float Elements 
 ---------------------------------*/
 .fl-lt {float:left;}

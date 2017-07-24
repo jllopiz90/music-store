@@ -23,7 +23,7 @@ function ajaxCall(data,url,successMessage,errorMessage)
             }
         }
     });
-}
+};
 
 function ajaxCallback(data,url,functionName)
 {
@@ -34,4 +34,4 @@ function ajaxCallback(data,url,functionName)
             eval(functionName + '(' + res + ')');
         }
     });
-}
+};

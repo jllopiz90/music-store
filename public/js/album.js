@@ -44,7 +44,6 @@ $(document).ready(function(e) {
             ajaxCallback({'ID':id,'NAME':name,'ARTISTID':artist,'COVER':imgCover},'/album/editAlbum','editAlbumCallBack');
     });
 
-
     Dropzone.options.myAwesomeDropzone = {
         maxFiles: 1,
         maxFilesize: 3,
@@ -94,14 +93,14 @@ function createAlbumCallBack(result) {
         toastr.success('A new album was created!!!');
         window.location = "/artist/"+result;
     }
-}
+};
 
 function editAlbumCallBack(result) {
     if(result == -1)
         toastr.error('An error has happened, please try later');
     else
         window.location = "/album/"+result;
-}
+};
 
 function deleteAlbumCallBack(result) {
     if(result == '-1')
@@ -109,4 +108,4 @@ function deleteAlbumCallBack(result) {
     else
         window.location="/artist/"+result;
         window.location="/artist/"+result;
-}
+};

@@ -88,6 +88,7 @@
 <script src="{{ asset('js/dropzone.js')}}"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.min.js"></script>
 <script src="{{ asset('js/tools.js')}}"></script>
+<script src="{{ asset('js/home.js')}}"></script>
 <script src="{{ asset('js/artist.js')}}"></script>
 <script src="{{ asset('js/album.js')}}"></script>
 

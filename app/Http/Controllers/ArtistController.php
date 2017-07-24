@@ -32,8 +32,9 @@ class ArtistController extends Controller
      */
     public function index()
     {
-        $artist = Artist::orderBy('name','asc')->get();
-        return view('artist/artists',['artists'=> $artist]);
+        $artists = Artist::orderBy('name','asc')->take(5)->get();
+        $totalPag = ceil(Artist::count()/5);
+        return view('artist/artists',['artists'=> $artists,'page'=>0,'totalPag'=>$totalPag]);
     }
 
     public function artist($id)
@@ -77,5 +78,14 @@ class ArtistController extends Controller
         }
         return -1;
 
+    }
+
+    public function changePage(){
+        $page = Input::get('PAGE');
+        $artists = Artist::orderBy('name','asc')->skip($page*5)->take(5)->get();
+        if($artists == null)
+            return -1;
+        $array_result =[$page,$artists];
+        return json_encode($array_result);
     }
 }

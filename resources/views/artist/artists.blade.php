@@ -25,8 +25,9 @@
                 <div class="container">
                     <h2>Artists</h2>
                     <div class="row">
-                        <div class="col-lg-4 col-sm-6 wow fadeInLeft delay-05s artists-container">
-                            <div id="artistCont">
+                        <div class="col-lg-6 col-md-6 col-sm-6 wow fadeInLeft delay-05s artists-container">
+                            <div id="artistCont" data-totalpages="{{$totalPag}}" data-page="{{$page}}">
+                                <div id="artistContainer">
                                 @foreach($artists as $artist)
                                     <div class="service-list" id="artist_{{$artist->id}}">
                                         <div class="service-list-col1">
@@ -56,6 +57,14 @@
                                         </div>
                                     </div>
                                 @endforeach
+                                </div>
+                                @if($totalPag>1)
+                                    <div class="col-lg-12 col-md-12 col-sm-12 artistNav">
+                                        <a href="javascript:void(0);" id="prevArtistPag" class="fl-lt"> <i class="fa fa-chevron-left" aria-hidden="true"></i>PREV</a>
+                                        <span class="col-lg-offset-3 col-md-offset-3"><i class="fa fa-file-o" aria-hidden="true"></i> <span id="currentArtistPage">{{$page+1}}</span>/<span id="totalArtistPAg">{{$totalPag}}</span></span>
+                                        <a href="javascript:void(0);" id="nextArtistPag" class="col-lg-offset-4 col-md-offset-4"> <i class="fa fa-chevron-right" aria-hidden="true"></i>NEXT</a>
+                                    </div>
+                                @endif
                             </div>
                             @if(Auth::user()->authorizeRoles(['admin']))
                                 <ul class="Portfolio-nav wow fadeIn delay-02s fl-lt">
@@ -65,7 +74,7 @@
                                 </ul>
                             @endif
                         </div>
-                        <figure class="col-lg-8 col-sm-6  text-right wow fadeInUp delay-02s">
+                        <figure class="col-lg-6 col-md-6 col-sm-6  text-right wow fadeInUp delay-02s">
                             <img src="img/music.jpg" alt="">
                         </figure>
                     </div>
